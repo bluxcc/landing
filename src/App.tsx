@@ -3,8 +3,8 @@ import blux from "/blux.png";
 
 function App() {
   return (
-    <div className="flex flex-col py-8 justify-between items-center !bg-[#FFCDCD] h-screen w-screen font-mono">
-      <div>
+    <div className="flex flex-col justify-between items-center !bg-[#FFCDCD] h-screen w-screen font-mono">
+      <div className="h-[72px] center">
         <img src={blux} alt="blux" />
       </div>
 
@@ -12,7 +12,7 @@ function App() {
         <AnimatedBlux />
       </div>
 
-      <div className="w-[239px] text-center text-[#0D1292] text-[22px] font-medium">
+      <div className="w-[239px] text-center text-[#0D1292] text-[22px] font-medium pb-20">
         <p>Trust the Power of Simplicity.</p>
       </div>
     </div>
