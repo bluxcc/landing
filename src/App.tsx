@@ -1,14 +1,20 @@
-import React from "react";
+import AnimatedBlux from "./components/AnimatedBlux";
+import blux from "/blux.png";
 
 function App() {
   return (
-    <div className="center bg-[#FFCDCD] h-screen w-screen">
-      <a href="https://git.io/typing-svg">
-        <img
-          src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=56&duration=2000&pause=1000&color=0D1292&center=true&vCenter=true&width=1200&height=300&lines=+Secure%2C+Simple+and+Powerful.;Comming+soon;BLUX+CC"
-          alt="Typing SVG"
-        />
-      </a>
+    <div className="flex flex-col py-8 justify-between items-center !bg-[#FFCDCD] h-screen w-screen font-mono">
+      <div>
+        <img src={blux} alt="blux" />
+      </div>
+
+      <div className="flex-grow flex items-center">
+        <AnimatedBlux />
+      </div>
+
+      <div className="w-[239px] text-center text-[#0D1292] text-[22px] font-medium">
+        <p>Trust the Power of Simplicity.</p>
+      </div>
     </div>
   );
 }
