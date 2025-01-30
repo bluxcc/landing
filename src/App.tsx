@@ -1,5 +1,5 @@
 import AnimatedBlux from "./components/AnimatedBlux";
-import blux from "/blux.png";
+import blux from "/blux.svg";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       </div>
 
       <div className="w-[239px] text-center text-[#0D1292] text-[22px] font-medium pb-20">
-        <p>Trust the Power of Simplicity.</p>
+        <p>Stay tuned, it’s almost here.</p>
       </div>
     </div>
   );
