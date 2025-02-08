@@ -12,7 +12,7 @@ function App() {
         <AnimatedBlux />
       </div>
 
-      <div className="w-[239px] text-center text-[#0D1292] text-[22px] font-medium pb-20">
+      <div className="w-[239px] text-center text-[#0D1292] text-[22px] font-medium pb-20 uppercase">
         <p>Stay tuned, it’s almost here.</p>
       </div>
     </div>
