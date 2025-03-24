@@ -3,15 +3,19 @@ import stellar from "/stellar.svg";
 import whiteArrow from "/whiteArrow.svg";
 import blueArrow from "/blueArrow.svg";
 import meadow from "/meadow.svg";
-import copy from "/copy.svg";
+import copyIcon from "/copy.svg";
 import bluxProduct from "/bluxProduct.svg";
+import { useState } from "react";
 
 function App() {
+  const [copied, setCopied] = useState(false);
+
   const handleCopy = () => {
     navigator.clipboard.writeText("npm i @bluxcc/react");
+    setCopied(true);
+
+    setTimeout(() => setCopied(false), 2000);
   };
-  // className =
-  //   "desktop:w-[] desktop-h-[] tablet:w-[] tablet-h-[] mobile:w-[] mobile-h-[]";
 
   return (
     <div
@@ -73,16 +77,28 @@ function App() {
                 Get Started with Blux
               </p>
               <div className="flex gap-2 mt-4 mobile:flex-col">
-                <div className="center tablet:text-xs mobile:text-base mobile:w-full gap-1 w-[377px] tablet:w-[214px] tablet:h-[32px] border-b-[#0C1083] border-b-[2px] cursor-pointer p-4 h-14 bg-[#F2F2F2]">
-                  npm i @bluxcc/react{" "}
-                  <img src={copy} alt="copy" onClick={handleCopy} />
+                <div
+                  className="center gap-2 tablet:text-xs mobile:text-base mobile:w-full 
+                  w-[377px] tablet:w-[214px] tablet:h-[32px] border-b-[#0C1083] border-b-[2px] 
+                  cursor-pointer p-4 h-14 bg-[#F2F2F2]"
+                  onClick={handleCopy}
+                >
+                  npm i @bluxcc/react
+                  <div className="relative flex items-center">
+                    <img src={copyIcon} alt="copy" />
+                    {copied && (
+                      <span className="absolute top-[-50px] left-3 text-xs text-[#0C1083] bg-[#F2F2F2] p-2">
+                        Copied!
+                      </span>
+                    )}
+                  </div>
                 </div>
                 <a
                   className="cursor-pointer tablet:text-xs mobile:text-base mobile:w-full bg-[#0C1083] text-white w-[137px] tablet:w-[95px] tablet:h-[32px] gap-1 h-14 center"
                   href="https://demo.blux.cc/"
                   target="_blank"
                 >
-                  Get Demo{" "}
+                  Get Demo
                   <img src={whiteArrow} alt="arrow" className="tablet:size-3" />
                 </a>
               </div>
@@ -107,7 +123,7 @@ function App() {
 
       <div className="flex justify-between items-center w-full text-[#999999] tablet:text-xs text-base mobile:justify-end">
         <p className="mobile:hidden">
-          The Future of Stellar applications Starts Here.
+          The Future of Stellar Applications Starts Here.
         </p>
         <p>© 2025 Blux</p>
       </div>
