@@ -20,7 +20,7 @@ function App() {
   return (
     <div
       className="flex font-manrope flex-col justify-between !bg-white font-medium
-    text-[#0C1083] py-[17px] px-20 tall:px-46 tablet:p-10 mobile:px-6 h-screen w-screen"
+    text-primary py-[17px] px-20 tall:px-46 tablet:p-10 mobile:px-6 h-screen w-screen"
     >
       <div className="h-[114px] tablet:h-[74px] mobile:h-auto flex w-full justify-between items-end py-[18px] mobile:pt-0 mobile:pb-3">
         <img
@@ -37,7 +37,7 @@ function App() {
             Documentation
           </a>
           <a
-            className="border cursor-pointer border-[#0C1083] desktop:w-[129px] tablet:w-[95px] gap-1 h-12 tablet:h-8 center"
+            className="border cursor-pointer border-primary desktop:w-[129px] tablet:w-[95px] gap-1 h-12 tablet:h-8 center"
             href="https://demo.blux.cc/"
             target="_blank"
           >
@@ -79,7 +79,7 @@ function App() {
               <div className="flex gap-2 mt-4 mobile:flex-col">
                 <div
                   className="center gap-2 tablet:text-xs mobile:text-base mobile:w-full 
-                  w-[377px] tablet:w-[214px] tablet:h-[32px] border-b-[#0C1083] border-b-[2px] 
+                  w-[377px] tablet:w-[214px] tablet:h-[32px] border-b-primary border-b-[2px] 
                   cursor-pointer p-4 h-14 bg-[#F2F2F2]"
                   onClick={handleCopy}
                 >
@@ -87,14 +87,14 @@ function App() {
                   <div className="relative flex items-center">
                     <img src={copyIcon} alt="copy" />
                     {copied && (
-                      <span className="absolute top-[-50px] left-3 text-xs text-[#0C1083] bg-[#F2F2F2] p-2">
+                      <span className="absolute top-[-50px] left-3 text-xs text-primary bg-[#F2F2F2] p-2">
                         Copied!
                       </span>
                     )}
                   </div>
                 </div>
                 <a
-                  className="cursor-pointer tablet:text-xs mobile:text-base mobile:w-full bg-[#0C1083] text-white w-[137px] tablet:w-[95px] tablet:h-[32px] gap-1 h-14 center"
+                  className="cursor-pointer tablet:text-xs mobile:text-base mobile:w-full bg-primary text-white w-[137px] tablet:w-[95px] tablet:h-[32px] gap-1 h-14 center"
                   href="https://demo.blux.cc/"
                   target="_blank"
                 >
@@ -121,7 +121,7 @@ function App() {
         </div>
       </div>
 
-      <div className="flex justify-between items-center w-full text-[#999999] tablet:text-xs text-base mobile:justify-end">
+      <div className="flex justify-between items-center w-full text-gray tablet:text-xs text-base mobile:justify-end">
         <p className="mobile:hidden">
           The Future of Stellar Applications Starts Here.
         </p>
