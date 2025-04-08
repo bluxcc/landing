@@ -19,10 +19,10 @@ function App() {
 
   return (
     <div
-      className="flex font-manrope flex-col justify-between !bg-white font-medium
-    text-primary py-[17px] px-20 tall:px-46 tablet:p-10 mobile:px-6 h-screen w-screen"
+      className="flex font-manrope flex-col justify-between items-center !bg-white font-medium
+    text-primary py-[17px] tablet:px-10 tablet:py-8 mobile:px-6 h-screen w-screen"
     >
-      <div className="h-[114px] tablet:h-[74px] mobile:h-auto flex w-full justify-between items-end py-[18px] mobile:pt-0 mobile:pb-3">
+      <div className="h-[114px] tablet:h-[74px] mobile:h-auto flex w-full justify-between items-end py-[18px] mobile:pt-0 mobile:pb-3 max-w-[1280px] short:max-w-[1210px]">
         <img
           src={blux}
           alt="blux"
@@ -47,8 +47,8 @@ function App() {
         </div>
       </div>
 
-      <div className="flex mobile:flex-col-reverse justify-between items-center w-full border border-[#CDCEEE] p-10 mobile:p-4 mobile:items-start tablet:p-6 mt-[13px] mobile:mb-4">
-        <div className="flex flex-col w-2/4 mobile:w-full justify-between h-full">
+      <div className="desktop:max-w-[1280px] short:max-w-[1210px] tablet:gap-5 desktop:max-h-[630px] desktop:mt-0 not-visited:mt-3 flex mobile:flex-col-reverse justify-between items-center w-full border border-[#CDCEEE] p-10 mobile:p-4 mobile:items-start tablet:p-6  mobile:mb-4">
+        <div className="flex flex-col w-1/2 mobile:w-full justify-between h-full">
           <div className="text-[22px] mobile:hidden tablet:text-sm max-w-[200px] tablet:max-w-[127px] tablet:leading-[17px] leading-[30px]">
             The Complete Kit for{" "}
             <span className="inline-flex items-center gap-2">
@@ -72,7 +72,7 @@ function App() {
               wallets, sign transactions, and integrate Stellar’s on-chain
               infrastructure—all through a single, developer-friendly API.
             </p>
-            <div className="mt-12 mobile:mt-10 flex-col">
+            <div className="mt-12 tablet:mt-[27px] mobile:mt-10 flex-col">
               <p className="text-lg tablet:text-xs mobile:text-base">
                 Get Started with Blux
               </p>
@@ -85,7 +85,7 @@ function App() {
                 >
                   npm i @bluxcc/react
                   <div className="relative flex items-center">
-                    <img src={copyIcon} alt="copy" />
+                    <img src={copyIcon} alt="copy" className="tablet:size-4" />
                     {copied && (
                       <span className="absolute top-[-50px] left-3 text-xs text-primary bg-[#F2F2F2] p-2">
                         Copied!
@@ -105,12 +105,12 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="w-2/4 mobile:w-full flex desktop:justify-end justify-center">
+        <div className="w-1/2 mobile:w-full flex desktop:justify-end justify-center">
           <div className="relative">
             <img
               src={meadow}
               alt="meadow"
-              className="z-10 w-full h-auto short:h-[450px] mobile:h-auto"
+              className="z-10 w-full h-auto short:h-[500px] mobile:h-auto max-w-[554px]"
             />
             <img
               src={bluxProduct}
@@ -121,7 +121,7 @@ function App() {
         </div>
       </div>
 
-      <div className="flex justify-between items-center w-full text-gray tablet:text-xs text-base mobile:justify-end">
+      <div className="max-w-[1280px] short:max-w-[1210px] flex justify-between items-center w-full text-gray tablet:text-xs text-base mobile:justify-end">
         <p className="mobile:hidden">
           The Future of Stellar Applications Starts Here.
         </p>
