@@ -20,7 +20,7 @@ function App() {
   return (
     <div
       className="flex font-manrope flex-col justify-between items-center !bg-white font-medium
-    text-primary py-[17px] tablet:px-10 tablet:py-8 mobile:px-6 h-screen w-screen"
+    text-primary py-[17px] tablet:px-10 tablet:py-8 mobile:px-6 h-screen w-screen desktop:max-h-[1000px]"
     >
       <div className="h-[114px] tablet:h-[74px] mobile:h-auto flex w-full justify-between items-end py-[18px] mobile:pt-0 mobile:pb-3 max-w-[1280px] short:max-w-[1210px]">
         <img
