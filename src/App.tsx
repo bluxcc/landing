@@ -30,14 +30,14 @@ function App() {
         />
         <div className="flex gap-4 tablet:text-xs mobile:hidden">
           <a
-            className="cursor-pointer center h-12 tablet:h-8 center desktop:w-[143px] tablet:w-[100px]"
+            className="cursor-pointer center h-12 tablet:h-8 center desktop:w-[143px] tablet:w-[100px] hover:bg-[#F2F2F2] transition-colors duration-500"
             href="https://docs.blux.cc/"
             target="_blank"
           >
             Documentation
           </a>
           <a
-            className="border cursor-pointer border-primary desktop:w-[129px] tablet:w-[95px] gap-1 h-12 tablet:h-8 center"
+            className="border cursor-pointer border-primary desktop:w-[129px] tablet:w-[95px] gap-1 h-12 tablet:h-8 center hover:bg-[#E8E8FD] transition-colors duration-500"
             href="https://demo.blux.cc/"
             target="_blank"
           >
@@ -94,7 +94,7 @@ function App() {
                   </div>
                 </div>
                 <a
-                  className="cursor-pointer tablet:text-xs mobile:text-base mobile:w-full bg-primary text-white w-[137px] tablet:w-[95px] tablet:h-[32px] gap-1 h-14 center"
+                  className="hover:bg-[#04062F] transition-colors duration-500 cursor-pointer tablet:text-xs mobile:text-base mobile:w-full bg-primary text-white w-[137px] tablet:w-[95px] tablet:h-[32px] gap-1 h-14 center"
                   href="https://demo.blux.cc/"
                   target="_blank"
                 >
