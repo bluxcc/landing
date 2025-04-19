@@ -1,11 +1,13 @@
 import { useState } from "react";
 
 import blux from "/blux.svg";
-import stellar from "/stellar.svg";
-import whiteArrow from "/whiteArrow.svg";
+import xLogo from "/XLogo.svg";
 import meadow from "/meadow.svg";
 import copyIcon from "/copy.svg";
+import stellar from "/stellar.svg";
+import whiteArrow from "/whiteArrow.svg";
 import bluxProduct from "/bluxProduct.svg";
+import discordLogo from "/discordLogo.svg";
 
 function App() {
   const [copied, setCopied] = useState(false);
@@ -41,19 +43,14 @@ function App() {
             href="https://x.com/bluxofficial"
             target="_blank"
           >
-            <img src="/public/XLogo.svg" alt="X" height={24} width={24} />
+            <img src={xLogo} alt="X" height={24} width={24} />
           </a>
           <a
             className="size-12 tablet:size-8 mobile:size-10 border border-[#CDCEEE] center hover:bg-[#F2F2F2] transition-colors duration-500"
             href="https://discord.gg/PyDjPnWUYC"
             target="_blank"
           >
-            <img
-              src="/public/discordLogo.svg"
-              alt="discord"
-              height={24}
-              width={24}
-            />
+            <img src={discordLogo} alt="discord" height={24} width={24} />
           </a>
           <a
             className="border mobile:hidden text-white cursor-pointer bg-primary
