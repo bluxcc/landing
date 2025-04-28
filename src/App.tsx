@@ -8,6 +8,7 @@ import stellar from "/stellar.svg";
 import whiteArrow from "/whiteArrow.svg";
 import bluxProduct from "/bluxProduct.svg";
 import discordLogo from "/discordLogo.svg";
+import githubLogo from "/github.svg";
 
 function App() {
   const [copied, setCopied] = useState(false);
@@ -44,6 +45,13 @@ function App() {
             target="_blank"
           >
             <img src={xLogo} alt="X" height={24} width={24} />
+          </a>
+          <a
+            className="size-12 tablet:size-8 mobile:size-10 border border-[#CDCEEE] center hover:bg-[#F2F2F2] transition-colors duration-500"
+            href="https://github.com/bluxcc/blux"
+            target="_blank"
+          >
+            <img src={githubLogo} alt="github" height={24} width={24} />
           </a>
           <a
             className="size-12 tablet:size-8 mobile:size-10 border border-[#CDCEEE] center hover:bg-[#F2F2F2] transition-colors duration-500"
