@@ -136,7 +136,7 @@ function App() {
             <img
               src={meadow}
               alt="meadow"
-              className="z-10 w-full h-auto short:h-[500px] mobile:h-auto max-w-[554px]"
+              className="z-10 w-full h-auto short:h-[455px] mobile:h-auto max-w-[554px]"
             />
             <img
               src={bluxProduct}
