@@ -1,26 +1,29 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import meadow from "/meadow.svg";
-import copyIcon from "/copy.svg";
-import stellar from "/stellar.svg";
-import whiteArrow from "/whiteArrow.svg";
-import bluxProduct from "/bluxProduct.svg";
+import meadow from '/meadow.svg';
+import copyIcon from '/copy.svg';
+import stellar from '/stellar.svg';
+import whiteArrow from '/whiteArrow.svg';
+import bluxProduct from '/bluxProduct.svg';
 
 const Hero = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("npm i @bluxcc/react");
+    navigator.clipboard.writeText('npm i @bluxcc/react');
     setCopied(true);
 
     setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <div className="desktop:max-w-[1280px] short:max-w-[1210px] tablet:gap-5 desktop:max-h-[630px] desktop:mt-0 not-visited:mt-3 flex mobile:flex-col-reverse justify-between items-center w-full border border-[#CDCEEE] p-10 mobile:p-4 mobile:items-start tablet:p-6  mobile:mb-4">
-      <div className="flex flex-col w-1/2 mobile:w-full justify-between h-full">
+    <div
+      className="desktop:max-w-[1280px] short:max-w-[1210px] tablet:gap-5 desktop:max-h-[630px] desktop:mt-0 not-visited:mt-3 flex
+     mobile:flex-col-reverse justify-between desktop:h-screen items-center w-full border border-[#CDCEEE] p-10 mobile:p-4 mobile:items-start tablet:p-6 mobile:mb-4"
+    >
+      <div className="flex flex-col h-full w-1/2 mobile:w-full justify-between">
         <div className="text-[22px] mobile:hidden tablet:text-sm max-w-[200px] tablet:max-w-[127px] tablet:leading-[17px] leading-[30px]">
-          The Complete Kit for{" "}
+          The Complete Kit for{' '}
           <span className="inline-flex items-center gap-2">
             Stellar
             <img src={stellar} alt="Stellar icon" />
