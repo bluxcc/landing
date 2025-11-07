@@ -3,7 +3,7 @@ import stellar from '/stellar.svg';
 const GradientBox = () => {
   return (
     <div
-      className="w-full max-w-[1200px] h-auto md:h-[586px] flex flex-col md:flex-row justify-between items-center mb-24 overflow-hidden"
+      className="w-full max-w-[1200px] h-auto md:h-[586px] flex flex-col md:flex-row justify-between items-center mb-24 mobile:mb-16 overflow-hidden"
       style={{
         backgroundImage: 'url(/gradient.svg)',
         backgroundRepeat: 'no-repeat',
@@ -14,7 +14,7 @@ const GradientBox = () => {
       {/* Left content */}
       <div className="w-full h-full mb-12 md:w-auto flex flex-col justify-end items-start mt-5 sm:mt-0 pb-0 sm:pb-10 pl-6 md:pl-10">
         {/* Stellar Icon */}
-        <div className="flex flex-col items-start mb-4">
+        <div className="flex flex-col items-start mb-4 mt-6">
           <img
             src={stellar}
             alt="Stellar icon"
@@ -37,8 +37,12 @@ const GradientBox = () => {
       </div>
 
       {/* Right image */}
-      <div className="w-full md:w-auto flex justify-center md:justify-end mt-8 md:mt-0 relative z-10">
-        <img src="/grid.svg" alt="grid" className="w-auto h-auto md:mr-0" />
+      <div className="w-full md:w-auto mobile:h-26 flex justify-center md:justify-end mt-8 md:mt-0 relative z-10">
+        <img
+          src="/grid.svg"
+          alt="grid"
+          className="w-auto h-auto md:mr-0 mobile:hidden "
+        />
       </div>
     </div>
   );

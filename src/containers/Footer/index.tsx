@@ -15,8 +15,14 @@ const footerLinks = [
     title: 'Developers',
     links: [
       { label: 'GitHub', href: 'https://github.com/bluxcc' },
-      { label: 'NPM Package', href: 'https://www.npmjs.com/package/@bluxcc' },
-      { label: 'API Reference', href: '/api' },
+      {
+        label: 'Core Package',
+        href: 'https://www.npmjs.com/package/@bluxcc/core',
+      },
+      {
+        label: 'React Package',
+        href: 'https://www.npmjs.com/package/@bluxcc/react',
+      },
     ],
   },
   {
@@ -24,6 +30,7 @@ const footerLinks = [
     links: [
       { label: 'X', href: 'https://x.com/bluxofficial' },
       { label: 'Discord', href: 'https://discord.gg/PyDjPnWUYC' },
+      { label: 'Support', href: 'mailto:support@blux.cc' },
     ],
   },
 ];
@@ -75,7 +82,7 @@ const Footer = () => {
             >
               {footerLinks.map(({ title, links }) => (
                 <div key={title}>
-                  <h3 className="font-semibold mb-2">{title}</h3>
+                  <p className="!font-bold mb-2">{title}</p>
                   <ul>
                     {links.map(({ label, href }) => (
                       <li
@@ -106,10 +113,8 @@ const Footer = () => {
         </div>
       </footer>
 
-      <div className="max-w-[1280px] short:max-w-[1210px] mx-auto h-[70px] flex justify-between items-center w-full text-gray tablet:text-xs text-base mobile:justify-end px-6 md:px-0">
-        <p className="mobile:hidden">
-          The Future of Stellar Applications Starts Here.
-        </p>
+      <div className="max-w-[1280px] tablet:px-10 short:max-w-[1210px] mobile:flex-col mobile:my-4 mobile:items-start mx-auto h-[70px] flex justify-between items-center w-full text-[#4D4D4D] tablet:text-xs text-base mobile:justify-end px-6 md:px-0">
+        <p>The Future of Stellar Applications Starts Here.</p>
         <p>© 2025 Blux</p>
       </div>
     </>

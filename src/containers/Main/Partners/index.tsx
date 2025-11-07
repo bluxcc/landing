@@ -13,7 +13,7 @@ const partners: Partner[] = [
 
 const Partners = () => {
   return (
-    <section className="flex flex-col items-center w-full max-w-[1146px] mx-auto sm:my-[143px] my-25 px-4">
+    <section className="flex flex-col items-center w-full max-w-[1146px] mx-auto sm:mb-[143px] sm:mt-[133px] my-22 px-4">
       <div className="text-primary text-center flex flex-col justify-center items-center space-y-4 max-w-[681px]">
         <h2 className="text-2xl lg:text-[40px] font-medium text-center leading-[41px] max-w-[458px] uppercase">
           Connected Projects & Partners

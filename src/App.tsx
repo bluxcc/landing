@@ -7,11 +7,14 @@ function App() {
   return (
     <div
       className="flex font-manrope w-full flex-col justify-between items-center !bg-white font-medium
-    text-primary pt-[17px] tablet:px-10 tablet:pt-8 mobile:px-6"
+    text-primary pt-[17px] tablet:pt-8"
     >
-      <Header />
-      <Hero />
-      <Main />
+      <div className="mobile:px-6 tablet:px-10">
+        <Header />
+        <Hero />
+        <Main />
+      </div>
+
       <Footer />
     </div>
   );

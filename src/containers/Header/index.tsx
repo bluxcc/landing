@@ -28,7 +28,7 @@ export const Header = () => {
 
         <a
           className="border mobile:hidden text-primary border-none cursor-pointer bg-[#E8E8FD]
-            hover:bg-[#CDCEEE] desktop:w-[126px] tablet:w-[92px] h-12 text-sm
+            hover:bg-[#CDCEEE] desktop:w-[126px] tablet:w-[120px] h-12 text-sm
             tablet:h-8 flex justify-center items-center transition-colors duration-500"
           href="https://dashboard.blux.cc/"
           target="_blank"
