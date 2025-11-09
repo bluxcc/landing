@@ -1,13 +1,42 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @config "../tailwind.config.ts";
 
 @theme {
-  --font-mono: "JetBrains Mono", monospace;
-  --font-manrope: "Manrope", sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-manrope: 'Manrope', sans-serif;
+}
+
+/* index.css */
+
+/* Smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 1px;
+  color: white;
+  background-color: white;
 }
 
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@keyframes gradientMove {
+  0% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(10px) translateY(5px);
+  }
+  100% {
+    transform: translateX(-10px) translateY(-5px);
+  }
+}
+
+.animate-gradient {
+  animation: gradientMove 2s ease-in-out infinite;
 }
