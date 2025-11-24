@@ -2,7 +2,7 @@ import blux from '/blux.svg';
 import githubLogo from '/github.svg';
 export const Header = () => {
   return (
-    <div className="h-[114px] mobile:flex-col mobile:items-start mobile:gap-6 tablet:h-[74px] mobile:h-auto flex w-full justify-between items-end py-[18px] mobile:pt-0 mobile:pb-3 max-w-[1280px] short:max-w-[1210px]">
+    <div className="h-[114px] mobile:flex-col mobile:items-start mobile:gap-6 tablet:h-[74px] mobile:h-auto flex w-full justify-between items-end py-[18px] mobile:pt-0 mobile:pb-3">
       <img
         src={blux}
         alt="Blux"
@@ -28,7 +28,7 @@ export const Header = () => {
 
         <a
           className="border mobile:hidden text-primary border-none cursor-pointer bg-[#E8E8FD]
-            hover:bg-[#CDCEEE] desktop:w-[126px] tablet:w-[120px] h-12 text-sm
+            hover:bg-[#CDCEEE] w-[126px] tablet:w-[120px] h-12 text-sm
             tablet:h-8 flex justify-center items-center transition-colors duration-500"
           href="https://dashboard.blux.cc/"
           target="_blank"

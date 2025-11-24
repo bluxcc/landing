@@ -1,18 +1,18 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#0C1083",
-        gray: "#999999",
+        primary: '#0C1083',
+        gray: '#999999',
       },
       screens: {
-        short: { raw: "(min-width: 1024px) and (max-height: 849px)" },
-        tall: { raw: "(min-width: 1500px) and (min-height: 850px)" },
-        mobile: { max: "771px" },
-        tablet: { min: "771px", max: "1279px" },
-        desktop: { min: "1280px" },
+        short: { raw: '(min-width: 1024px) and (max-height: 849px)' },
+        tall: { raw: '(min-width: 1500px) and (min-height: 850px)' },
+        mobile: { max: '771px' },
+        tablet: { min: '771px', max: '1270px' },
+        desktop: { min: '1270px' },
       },
     },
   },

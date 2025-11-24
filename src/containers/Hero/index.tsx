@@ -18,7 +18,7 @@ const Hero = () => {
 
   return (
     <div
-      className="desktop:max-w-[1280px] short:max-w-[1210px] tablet:gap-5 desktop:max-h-[630px] desktop:mt-0 not-visited:mt-3 flex
+      className="tablet:gap-5 desktop:max-h-[630px] short:max-h-[550px] desktop:mt-0 not-visited:mt-3 flex
      mobile:flex-col-reverse justify-between desktop:h-screen items-center w-full border border-[#CDCEEE] p-10 mobile:p-4 mobile:items-start tablet:p-6 mobile:mb-4"
     >
       <div className="flex flex-col h-full w-1/2 mobile:w-full justify-between">
