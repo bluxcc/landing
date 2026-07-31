@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import meadow from '/meadow.svg';
 import copyIcon from '/copy.svg';
 import stellar from '/stellar.svg';
 import whiteArrow from '/whiteArrow.svg';
 import bluxProduct from '/bluxProduct.svg';
+import AnimatedRubik from '../../components/AnimatedRubik';
 
 const Hero = () => {
   const [copied, setCopied] = useState(false);
@@ -19,9 +19,9 @@ const Hero = () => {
   return (
     <div
       className="tablet:gap-5 desktop:max-h-[630px] short:max-h-[550px] desktop:mt-0 not-visited:mt-3 flex
-     mobile:flex-col-reverse justify-between desktop:h-screen items-center w-full border border-[#CDCEEE] p-10 mobile:p-4 mobile:items-start tablet:p-6 mobile:mb-4"
+     mobile:flex-col-reverse justify-between desktop:h-screen items-center w-full border border-[#CDCEEE] mobile:items-start mobile:mb-4"
     >
-      <div className="flex flex-col h-full w-1/2 mobile:w-full justify-between">
+      <div className="flex flex-col h-full w-1/2 mobile:w-full justify-between p-10 mobile:p-4 tablet:p-6">
         <div className="text-[22px] mobile:hidden tablet:text-sm max-w-[200px] tablet:max-w-[127px] tablet:leading-[17px] leading-[30px]">
           The Complete Kit for{' '}
           <span className="inline-flex items-center gap-2">
@@ -78,17 +78,14 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="w-1/2 mobile:w-full flex desktop:justify-end justify-center">
-        <div className="relative">
-          <img
-            src={meadow}
-            alt="meadow"
-            className="z-10 w-full h-auto short:h-[455px] mobile:h-auto max-w-[554px]"
-          />
+      <div className="w-1/2 mobile:w-full flex justify-center desktop:justify-end h-full p-0 tablet:p-6">
+        <div className="relative aspect-square mobile:h-auto w-[clamp(300px,46vw,600px)]">
+          <AnimatedRubik />
+
           <img
             src={bluxProduct}
-            alt="bluxProduct"
-            className="absolute top-1/2 left-1/2 z-20 transform -translate-x-1/2 -translate-y-1/2 w-[50%] mobile:h-full h-5/6"
+            alt=""
+            className="absolute left-1/2 top-1/2 z-20 w-[55%] -translate-x-1/2 -translate-y-1/2"
           />
         </div>
       </div>

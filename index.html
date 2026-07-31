@@ -1,77 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Blux – Secure Wallet Infrastructure for Stellar dApps</title>
+    <title>
+      Blux: Authentication & Wallet Infrastructure for Stellar dApps
+    </title>
+
     <meta
       name="description"
-      content="Blux provides a powerful authentication and wallet integration solution for Stellar dApps. Effortlessly connect multiple wallets, sign transactions, and manage user authentication with a single API."
-    />
-    <meta name="robots" content="follow, index" />
-    <meta
-      name="keywords"
-      content="Stellar Wallets, XLM Wallets, Extension Wallets, Wallets, Wallet Chrome Extension, connect-kit, connect kit, blux, stellar network, bluxcc"
+      content="Authentication and wallet infrastructure for Stellar dApps. Connect wallets, authenticate users, sign transactions, and manage accounts with one SDK."
     />
 
-    <!-- Canonical URL -->
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://blux.cc/" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/bluxLogo.svg" />
+    <!-- Theme -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light" />
 
-    <!-- Open Graph (for social media previews) -->
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/bluxLogo.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Blux – Secure Wallet Infrastructure for Stellar dApps"
-    />
-    <meta
-      property="og:description"
-      content="Blux provides seamless wallet authentication and transaction signing for Stellar-based applications."
-    />
-    <meta property="og:image" content="https://blux.cc/blux-preview.png" />
+    <meta property="og:site_name" content="Blux" />
     <meta property="og:url" content="https://blux.cc/" />
 
-    <!-- Twitter Card -->
+    <meta
+      property="og:title"
+      content="Blux – Authentication Infrastructure for Stellar dApps"
+    />
+
+    <meta
+      property="og:description"
+      content="Connect wallets, authenticate users, sign transactions, and manage accounts with one SDK."
+    />
+
+    <meta property="og:image" content="https://blux.cc/blux-preview.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <meta
+      property="og:image:alt"
+      content="Blux authentication and wallet infrastructure for Stellar dApps"
+    />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bluxofficial" />
+
     <meta
       name="twitter:title"
-      content="Blux – Secure Wallet Infrastructure for Stellar dApps"
+      content="Blux – Authentication Infrastructure for Stellar dApps"
     />
+
     <meta
       name="twitter:description"
-      content="Seamlessly integrate Stellar wallets, sign transactions, and manage authentication with Blux."
+      content="Connect wallets, authenticate users, sign transactions, and manage accounts with one SDK."
     />
+
     <meta name="twitter:image" content="https://blux.cc/blux-preview.png" />
 
-    <!-- Preconnect for Faster Loading -->
+    <meta
+      name="twitter:image:alt"
+      content="Blux authentication and wallet infrastructure for Stellar dApps"
+    />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Structured Data (SEO) -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Blux",
-        "description": "Blux is a developer-friendly authentication and wallet integration solution for Stellar dApps.",
         "url": "https://blux.cc/",
-        "applicationCategory": "Blockchain Wallet",
+        "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
-        "image": "https://blux.cc/blux-preview.png"
+        "inLanguage": "en",
+        "description": "Authentication and wallet infrastructure for Stellar dApps.",
+        "image": "https://blux.cc/blux-preview.png",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Blux",
+          "url": "https://blux.cc/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://blux.cc/bluxLogo.svg"
+          }
+        }
       }
     </script>
-
-    <link href="./src/index.css" rel="stylesheet" />
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
