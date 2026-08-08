@@ -1,4 +1,4 @@
-# robots.txt for Blux Demo
+# robots.txt
 
 User-agent: *
 Allow: /

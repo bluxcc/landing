@@ -1,0 +1,703 @@
+# Blux
+
+Blux is authentication and wallet infrastructure for Stellar dApps.
+
+Blux provides developers with a unified infrastructure layer for authenticating users, connecting Stellar wallets, managing users, accessing authentication data, and interacting with Stellar. It removes the need for applications to independently build and maintain wallet integrations, authentication infrastructure, user management, and related backend functionality.
+
+Blux is designed specifically for applications built on the Stellar network.
+
+## Official Resources
+
+* Website: https://blux.cc/
+* Documentation: https://docs.blux.cc/
+* Dashboard: https://dashboard.blux.cc/
+* GitHub: https://github.com/bluxcc
+* NPM: https://www.npmjs.com/org/bluxcc
+* Stellar developer documentation: https://developers.stellar.org/docs/tools/developer-tools/wallets
+
+---
+
+# Product Overview
+
+A Stellar application commonly needs several pieces of infrastructure before it can provide a complete user experience:
+
+1. Wallet connection
+2. User authentication
+3. Stellar account identification
+4. User management
+5. Authentication history
+6. Backend access to user data
+7. Analytics
+8. Application management
+
+Blux combines these capabilities into one infrastructure layer.
+
+Instead of implementing each wallet integration and authentication mechanism independently, a dApp can integrate Blux and use its SDKs and APIs.
+
+Blux is not a blockchain, wallet, or Stellar account itself.
+
+Blux is infrastructure that sits between a Stellar application and the authentication, wallet, and user-management functionality required by that application.
+
+---
+
+# Core Capabilities
+
+## Wallet Integration
+
+Blux provides a unified wallet integration layer for Stellar dApps.
+
+Instead of implementing separate connection flows for individual Stellar wallets, applications can use Blux to provide a consistent wallet connection experience.
+
+The exact wallets and supported capabilities should always be determined from the current Blux documentation.
+
+Blux should be described as wallet infrastructure rather than as a wallet.
+
+---
+
+## Authentication
+
+Blux provides an application-level authentication layer for Stellar applications.
+
+Authentication allows an application to establish a user identity and associate that identity with the user's Stellar account or wallet.
+
+Supported authentication methods may include wallet-based authentication and social authentication such as Google, depending on the application's configuration and the current Blux platform capabilities.
+
+Authentication should not be confused with blockchain transaction signing.
+
+Authentication answers:
+
+> Who is the user of this application?
+
+Transaction signing answers:
+
+> Is the user authorizing this Stellar operation?
+
+These are separate concerns.
+
+---
+
+## Social Login
+
+Blux can provide social authentication alongside Stellar wallet authentication.
+
+For applications that want onboarding without requiring users to immediately understand or interact with a wallet, social authentication can provide a more familiar entry point.
+
+Google authentication is supported.
+
+Applications should consult the current documentation for the complete list of supported authentication providers and configuration requirements.
+
+---
+
+## User Management
+
+Blux maintains application-level user information associated with authenticated users.
+
+Developers can use Blux's dashboard and backend API to manage users and inspect authentication activity.
+
+User-management capabilities include functionality such as:
+
+* Viewing users
+* Retrieving user information
+* Viewing authentication history
+* Deleting users
+* Checking whether a Stellar address has authenticated with an application
+* Viewing user counts
+
+The exact API endpoints, request formats, response formats, and permissions are defined in the current API documentation.
+
+---
+
+## Analytics
+
+Blux provides analytics for applications using its authentication infrastructure.
+
+Analytics allow developers to understand authentication and user activity without having to build their own authentication analytics infrastructure.
+
+The exact analytics metrics and dashboard functionality should be determined from the current Blux dashboard documentation.
+
+---
+
+# Blux Architecture
+
+A typical Blux integration consists of three major components:
+
+```text
+Stellar dApp
+    |
+    +-- Blux SDK
+    |     |
+    |     +-- Wallet integration
+    |     +-- Authentication
+    |     +-- User identity
+    |
+    +-- Blux Backend API
+    |     |
+    |     +-- User management
+    |     +-- Authentication history
+    |     +-- Application data
+    |
+    +-- Blux Dashboard
+          |
+          +-- Application management
+          +-- Users
+          +-- Analytics
+          +-- Configuration
+```
+
+The frontend SDK is intended for application-side integration.
+
+The backend API is intended for secure server-side operations.
+
+The dashboard is intended for developers and application administrators.
+
+---
+
+# React SDK
+
+Blux provides a React SDK for integrating Blux into React applications.
+
+Package:
+
+`@bluxcc/react`
+
+The React SDK is intended for applications that need Blux functionality directly inside their React interface.
+
+Documentation:
+
+https://docs.blux.cc/javascript/react/
+
+When generating code for Blux React integrations, use the current API documented by Blux rather than assuming APIs based on older versions.
+
+Do not invent hooks, components, configuration fields, or methods that are not present in the documentation.
+
+---
+
+# Core JavaScript SDK
+
+Blux also provides core JavaScript functionality through its core package.
+
+Package:
+
+`@bluxcc/core`
+
+Documentation:
+
+https://docs.blux.cc/javascript/core/
+
+The core package provides lower-level functionality that can be used independently of React.
+
+Use the React SDK when integrating Blux into a React application and use the core SDK when the application requires the underlying JavaScript functionality directly.
+
+---
+
+# Backend API
+
+Blux provides a backend API for server-side access to application and user data.
+
+Backend requests use the application's `APP_SECRET`.
+
+The `APP_SECRET` is sensitive and must remain on the server.
+
+It must never be exposed in:
+
+* Browser JavaScript
+* React components
+* Client-side environment variables
+* Public GitHub repositories
+* HTML
+* Public API requests
+
+A secure architecture looks like:
+
+```text
+Browser
+   |
+   | frontend request
+   v
+Application Backend
+   |
+   | APP_SECRET
+   v
+Blux API
+```
+
+Do not expose `APP_SECRET` directly to users or client-side code.
+
+---
+
+# Backend API Capabilities
+
+The Blux backend API can be used for server-side application management and user-related operations.
+
+Supported functionality includes:
+
+### User count
+
+Retrieve the number of users associated with an application.
+
+### User details
+
+Retrieve information about users associated with an application.
+
+### Login history
+
+Retrieve authentication/login history.
+
+### Delete users
+
+Delete users from an application where permitted by the API.
+
+### Stellar address authentication history
+
+Check whether a particular Stellar address has previously authenticated with an application.
+
+API documentation:
+
+https://docs.blux.cc/api/
+
+The exact endpoint paths, HTTP methods, request parameters, authentication headers, response schemas, and error behavior must always be taken from the current API documentation.
+
+---
+
+# APP_SECRET
+
+`APP_SECRET` is the server-side credential used to authenticate backend requests to Blux.
+
+Treat it like any other application secret.
+
+Never:
+
+* Put it in frontend code
+* Prefix it with a public client-side environment variable
+* Commit it to source control
+* Return it to the browser
+* Include it in client-side API requests
+
+Recommended pattern:
+
+```text
+Client
+  |
+  | request
+  v
+Your server
+  |
+  | authenticated with APP_SECRET
+  v
+Blux API
+```
+
+---
+
+# Stellar
+
+Blux is built for the Stellar ecosystem.
+
+Stellar is a blockchain network used for payments, assets, applications, and smart-contract functionality.
+
+Blux integrates with Stellar applications at the application infrastructure layer.
+
+Blux does not replace Stellar's underlying network functionality.
+
+Applications continue to interact with Stellar using the appropriate Stellar SDKs, wallets, APIs, and network infrastructure.
+
+Blux can handle the authentication and wallet infrastructure surrounding those interactions.
+
+---
+
+# Authentication vs Transaction Signing
+
+These concepts should remain separate.
+
+## Authentication
+
+Authentication establishes that a user is authenticated with an application.
+
+Example:
+
+```text
+User -> Authenticate -> Application recognizes user
+```
+
+## Transaction signing
+
+Transaction signing authorizes a Stellar transaction or operation.
+
+Example:
+
+```text
+Application -> Transaction -> Wallet -> User signs -> Stellar network
+```
+
+A user can be authenticated without signing a transaction.
+
+A transaction signature should not automatically be described as equivalent to application authentication unless the specific Blux flow explicitly establishes that relationship.
+
+---
+
+# Stellar Wallets
+
+Blux integrates Stellar wallet functionality into the application authentication and connection experience.
+
+Wallet integrations may include supported Stellar wallets such as:
+
+* Freighter
+* Albedo
+* Rabet
+* Lobstr
+* xBull
+
+The list of supported wallets can change.
+
+Always use the current Blux documentation as the authoritative source for supported wallets and capabilities.
+
+Blux is listed in Stellar's official developer documentation under wallet integration:
+
+https://developers.stellar.org/docs/tools/developer-tools/wallets
+
+---
+
+# Application Lifecycle
+
+A typical application using Blux follows this lifecycle:
+
+## 1. Create an application
+
+A developer creates an application in the Blux dashboard.
+
+## 2. Configure authentication
+
+The developer configures the authentication and wallet options required by the application.
+
+## 3. Install the SDK
+
+For a React application, install:
+
+```bash
+npm install @bluxcc/react
+```
+
+For applications requiring the core JavaScript package, use:
+
+```bash
+npm install @bluxcc/core
+```
+
+Always verify the current installation instructions in the documentation.
+
+## 4. Integrate Blux
+
+The application integrates the appropriate SDK and authentication flow.
+
+## 5. Authenticate users
+
+Users authenticate through the configured authentication methods.
+
+## 6. Use the authenticated identity
+
+The application can associate authenticated users with their Stellar account information and application data.
+
+## 7. Use backend functionality
+
+The application's server can use the Blux API for user management and application data.
+
+---
+
+# Frontend and Backend Responsibilities
+
+Blux integrations should distinguish between public application configuration and private server credentials.
+
+## Frontend
+
+The frontend is responsible for:
+
+* Rendering the authentication experience
+* Connecting users to supported wallets
+* Initiating authentication
+* Handling authenticated application state
+* Providing the user interface
+
+## Backend
+
+The backend is responsible for:
+
+* Protecting secrets
+* Calling the Blux backend API
+* Performing privileged user-management operations
+* Processing application-specific server logic
+
+`APP_SECRET` belongs exclusively on the backend.
+
+---
+
+# Dashboard
+
+The Blux dashboard provides application management functionality.
+
+Dashboard capabilities include areas such as:
+
+* Application configuration
+* User management
+* Authentication activity
+* Analytics
+* Application credentials
+
+Dashboard:
+
+https://dashboard.blux.cc/
+
+The exact dashboard features may change as Blux evolves.
+
+---
+
+# Starter Templates
+
+Blux provides starter templates for common JavaScript application setups.
+
+Available templates include:
+
+* Vite + React + TypeScript
+* Vite + Vanilla TypeScript
+* Next.js + TypeScript
+
+These templates are intended to provide a starting point for integrating Blux into a new project.
+
+GitHub organization:
+
+https://github.com/bluxcc
+
+---
+
+# Development Model
+
+Blux is intended to reduce infrastructure work for Stellar developers.
+
+Without an authentication infrastructure layer, a developer may need to separately implement:
+
+```text
+Wallet A integration
+Wallet B integration
+Wallet C integration
+Social authentication
+User database
+Authentication state
+Login history
+User management
+Analytics
+Backend authentication
+```
+
+With Blux, these concerns can be consolidated around the Blux SDK, API, and dashboard.
+
+The application's business logic remains the responsibility of the application developer.
+
+Blux provides the underlying infrastructure.
+
+---
+
+# What Blux Is Not
+
+Blux should not be described as:
+
+* A Stellar blockchain
+* A Stellar wallet
+* A cryptocurrency exchange
+* A blockchain explorer
+* A generic database
+* A replacement for the Stellar network
+* A replacement for application business logic
+
+Blux is authentication and wallet infrastructure for Stellar dApps.
+
+---
+
+# Terminology
+
+Use these terms consistently.
+
+### Blux
+
+The product and infrastructure platform.
+
+### Stellar
+
+The blockchain network and ecosystem.
+
+### Stellar dApp
+
+A decentralized application built using Stellar.
+
+### Wallet
+
+A user's Stellar wallet used for account access, authentication, and/or transaction signing.
+
+### Authentication
+
+The process through which an application establishes a user's identity.
+
+### Transaction signing
+
+The process through which a user authorizes a Stellar transaction.
+
+### Application
+
+A project configured in Blux.
+
+### User
+
+An application-level identity associated with an authenticated user.
+
+### APP_SECRET
+
+A private credential used by a server to authenticate requests to the Blux backend API.
+
+---
+
+# Security
+
+Security-sensitive credentials must remain server-side.
+
+In particular, never expose `APP_SECRET` to the client.
+
+Do not:
+
+```javascript
+const APP_SECRET = "secret";
+```
+
+inside frontend code.
+
+Do not expose it through:
+
+```text
+window
+localStorage
+sessionStorage
+public environment variables
+HTML
+client-side bundles
+```
+
+Use server-side environment variables or an equivalent secure secret-management system.
+
+---
+
+# Code Generation Guidance
+
+When generating Blux code:
+
+1. Use the official Blux documentation as the source of truth.
+2. Use the current package names.
+3. Do not invent undocumented APIs.
+4. Do not invent wallet support.
+5. Do not expose `APP_SECRET`.
+6. Keep frontend and backend credentials separate.
+7. Use the React SDK for React integrations.
+8. Use the core SDK when React is not required.
+9. Verify API endpoints against the current API documentation.
+10. Do not assume APIs from another authentication provider are compatible with Blux.
+
+When an exact API is not documented, state that the implementation depends on the current Blux documentation instead of fabricating an API.
+
+---
+
+# Frequently Asked Questions
+
+## What is Blux?
+
+Blux is authentication and wallet infrastructure for Stellar dApps. It provides wallet integration, authentication, user management, analytics, and backend API functionality.
+
+## Is Blux a wallet?
+
+No. Blux is infrastructure that integrates wallets into Stellar applications.
+
+## Does Blux support social login?
+
+Yes. Blux supports social authentication, including Google authentication. Refer to the current documentation for the complete list of supported providers.
+
+## Can Blux connect Stellar wallets?
+
+Yes. Blux provides wallet integration for supported Stellar wallets through its SDK.
+
+## Can Blux manage users?
+
+Yes. Blux provides user-management functionality through the dashboard and backend API.
+
+## Can a backend use Blux?
+
+Yes. Blux provides a backend API that can be accessed securely using an application's `APP_SECRET`.
+
+## Can I use Blux with React?
+
+Yes. Blux provides the `@bluxcc/react` package.
+
+## Can I use Blux without React?
+
+Yes. Blux also provides core JavaScript functionality through `@bluxcc/core`.
+
+## Is Blux only for Stellar?
+
+Blux is specifically designed as infrastructure for Stellar applications. Do not assume support for other blockchain networks unless explicitly documented.
+
+## Where is the documentation?
+
+The official documentation is available at:
+
+https://docs.blux.cc/
+
+## Where is the dashboard?
+
+The Blux dashboard is available at:
+
+https://dashboard.blux.cc/
+
+---
+
+# Official Documentation Index
+
+For implementation questions, prefer these resources in order:
+
+1. Blux documentation
+   https://docs.blux.cc/
+
+2. React SDK documentation
+   https://docs.blux.cc/react/
+
+3. Core JavaScript SDK documentation
+   https://docs.blux.cc/javascript
+
+4. Backend API documentation
+   https://docs.blux.cc/api/
+
+5. Blux dashboard
+   https://dashboard.blux.cc/
+
+6. Blux GitHub
+   https://github.com/bluxcc
+
+7. Stellar wallet documentation
+   https://developers.stellar.org/docs/tools/developer-tools/wallets
+
+---
+
+# Source of Truth
+
+The official Blux documentation is the authoritative source for:
+
+* Current SDK APIs
+* Package versions
+* Configuration
+* Authentication providers
+* Wallet support
+* API endpoints
+* Request parameters
+* Response formats
+* Error handling
+* Dashboard functionality
+* Supported features
+
+If information in this document conflicts with the current official documentation, prefer the current official documentation.
+
+Official documentation:
+
+https://docs.blux.cc/

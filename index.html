@@ -21,9 +21,11 @@
     <meta name="color-scheme" content="light" />
 
     <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/bluxLogo.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-48x48.png" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -84,23 +86,58 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Blux",
-        "url": "https://blux.cc/",
-        "applicationCategory": "DeveloperApplication",
-        "operatingSystem": "Web",
-        "inLanguage": "en",
-        "description": "Authentication and wallet infrastructure for Stellar dApps.",
-        "image": "https://blux.cc/blux-preview.png",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Blux",
-          "url": "https://blux.cc/",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://blux.cc/bluxLogo.svg"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://blux.cc/#organization",
+            "name": "Blux",
+            "url": "https://blux.cc/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://blux.cc/bluxLogo.svg"
+            },
+            "sameAs": [
+              "https://x.com/bluxofficial",
+              "https://github.com/bluxcc"
+            ],
+            "description": "Authentication and wallet infrastructure for Stellar dApps."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://blux.cc/#software",
+            "name": "Blux",
+            "url": "https://blux.cc/",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "en",
+            "description": "Authentication and wallet infrastructure for Stellar dApps. Connect wallets, authenticate users, sign transactions, and manage accounts with one SDK.",
+            "image": "https://blux.cc/blux-preview.png",
+            "publisher": {
+              "@id": "https://blux.cc/#organization"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "name": "Blux Documentation",
+            "url": "https://docs.blux.cc/",
+            "publisher": {
+              "@id": "https://blux.cc/#organization"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "name": "Blux Dashboard",
+            "url": "https://dashboard.blux.cc/",
+            "publisher": {
+              "@id": "https://blux.cc/#organization"
+            }
           }
-        }
+        ]
       }
     </script>
   </head>
