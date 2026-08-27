@@ -75,14 +75,25 @@
 
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
+    <!-- Above-the-fold product image (LCP) -->
+    <link rel="preload" href="/bluxProduct.svg" as="image" type="image/svg+xml" fetchpriority="high" />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      />
+    </noscript>
 
     <!-- Structured Data -->
     <script type="application/ld+json">

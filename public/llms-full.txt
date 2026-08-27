@@ -50,7 +50,7 @@ Instead of implementing separate connection flows for individual Stellar wallets
 
 The exact wallets and supported capabilities should always be determined from the current Blux documentation.
 
-Blux should be described as wallet infrastructure rather than as a wallet.
+Blux should be described as authentication and wallet infrastructure rather than as a wallet.
 
 ---
 

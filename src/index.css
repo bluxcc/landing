@@ -40,3 +40,30 @@ html {
 .animate-gradient {
   animation: gradientMove 2s ease-in-out infinite;
 }
+
+body {
+  cursor:
+    url('/default.svg') 0 0,
+    default !important;
+}
+
+.cursor-default {
+  cursor:
+    url('/default.svg') 0 0,
+    default !important;
+}
+
+.cursor-pointer,
+option {
+  cursor:
+    url('/pointer.svg') 0 0,
+    pointer !important;
+}
+
+#bluxcc-button,
+button,
+a {
+  cursor:
+    url('/pointer.svg') 0 0,
+    pointer !important;
+}

@@ -29,11 +29,11 @@ export default function AnimatedRubik() {
     }
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xffffff);
+    scene.background = null;
 
     const camera = new THREE.PerspectiveCamera(
       45,
-      window.innerWidth / window.innerHeight,
+      1,
       0.1,
       2000,
     );
@@ -42,13 +42,32 @@ export default function AnimatedRubik() {
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
-      alpha: false,
+      alpha: true,
       powerPreference: 'high-performance',
     });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.domElement.style.display = 'block';
+    renderer.domElement.style.width = '100%';
+    renderer.domElement.style.height = '100%';
     container.appendChild(renderer.domElement);
+
+    const resizeRenderer = () => {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      if (width === 0 || height === 0) {
+        return;
+      }
+
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height, false);
+    };
+
+    resizeRenderer();
+    const resizeObserver = new ResizeObserver(resizeRenderer);
+    resizeObserver.observe(container);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
@@ -134,8 +153,10 @@ export default function AnimatedRubik() {
     const mouse = new THREE.Vector2();
 
     const onMouseMove = (event: MouseEvent) => {
-      mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-      mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+      const bounds = renderer.domElement.getBoundingClientRect();
+
+      mouse.x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
+      mouse.y = -((event.clientY - bounds.top) / bounds.height) * 2 + 1;
 
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObjects(smallCubes);
@@ -149,15 +170,8 @@ export default function AnimatedRubik() {
       }
     };
 
-    const onResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('click', onClick);
-    window.addEventListener('resize', onResize);
 
     const animate = () => {
       animationFrameId = window.requestAnimationFrame(animate);
@@ -228,9 +242,9 @@ export default function AnimatedRubik() {
     return () => {
       window.cancelAnimationFrame(animationFrameId);
       window.clearInterval(rotationIntervalId);
+      resizeObserver.disconnect();
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('click', onClick);
-      window.removeEventListener('resize', onResize);
 
       geometries.forEach((geometry) => geometry.dispose());
       materials.forEach((material) => material.dispose());
@@ -247,11 +261,15 @@ export default function AnimatedRubik() {
       ref={containerRef}
       style={{
         position: 'absolute',
-        inset: 0,
+        top: '-18%',
+        right: '-21%',
+        bottom: '-18%',
+        left: '-21%',
         width: 'auto',
         height: 'auto',
-        overflow: 'hidden',
-        background: '#ffffff',
+        overflow: 'visible',
+        background: 'transparent',
+        pointerEvents: 'none',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

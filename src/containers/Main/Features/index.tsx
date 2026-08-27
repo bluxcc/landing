@@ -49,7 +49,12 @@ const FeatureCard = ({
     <div className="h-full text-primary flex flex-col items-center space-y-4 px-6 sm:px-10 md:px-16 lg:px-20 py-8">
       {/* Header Section */}
       <div className="flex flex-col items-center space-y-3 max-w-[348px] text-center">
-        <img src={icon} alt={`${title} icon`} className="size-8" />
+        <img
+          src={icon}
+          alt={`${title} icon`}
+          className="size-8"
+          draggable={false}
+        />
         <h2 className="text-xl md:text-2xl font-semibold md:max-w-[229px] max-w-[171px]">
           {title}
         </h2>
@@ -59,7 +64,12 @@ const FeatureCard = ({
       <div className="relative mt-6 w-full flex justify-center">
         <MovingGradient />
         <div className="relative z-10">
-          <img src={image} alt={imageAlt} className="w-full h-auto" />
+          <img
+            src={image}
+            alt={imageAlt}
+            className="w-full h-auto"
+            draggable={false}
+          />
         </div>
       </div>
     </div>

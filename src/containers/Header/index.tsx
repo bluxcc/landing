@@ -3,12 +3,14 @@ import githubLogo from '/github.svg';
 export const Header = () => {
   return (
     <div className="h-[114px] mobile:flex-col mobile:items-start mobile:gap-6 tablet:h-[74px] mobile:h-auto flex w-full justify-between items-end py-[18px] mobile:pt-0 mobile:pb-3">
-      <img
-        src={blux}
-        alt="Blux"
-        draggable={false}
-        className="desktop:w-[361px] desktop-h-[78px] tablet:w-[236px] tablet-h-[51px] mobile:w-[268px] mobile-h-[58px]"
-      />
+      <a href="/" aria-label="Go to the Blux homepage">
+        <img
+          draggable={false}
+          src={blux}
+          alt="Blux"
+          className="desktop:w-[361px] desktop-h-[78px] tablet:w-[236px] tablet-h-[51px] mobile:w-[268px] mobile-h-[58px]"
+        />
+      </a>
       <div className="flex gap-4 mobile:gap-[9px] tablet:text-xs mobile:flex-row-reverse">
         <a
           className="cursor-pointer center h-12 mobile:h-10 tablet:h-8 center desktop:w-[143px] tablet:px-4 hover:bg-[#F2F2F2] transition-colors duration-500"
@@ -23,7 +25,13 @@ export const Header = () => {
           href="https://github.com/bluxcc/blux"
           target="_blank"
         >
-          <img src={githubLogo} alt="github" height={24} width={24} />
+          <img
+            draggable={false}
+            src={githubLogo}
+            alt="github"
+            height={24}
+            width={24}
+          />
         </a>
 
         <a
@@ -35,7 +43,8 @@ export const Header = () => {
         >
           View Dashboard
           {/* Get Demo
-          <img src={whiteArrow} alt="arrow" className="tablet:size-3" /> */}
+          <img             draggable={false}
+ src={whiteArrow} alt="arrow" className="tablet:size-3" /> */}
         </a>
       </div>
     </div>

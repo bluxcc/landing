@@ -3,7 +3,7 @@ import stellar from '/stellar.svg';
 const GradientBox = () => {
   return (
     <div
-      className="w-full max-w-[1200px] h-auto md:h-[586px] flex flex-col md:flex-row justify-between items-center mb-24 mobile:mb-16 overflow-hidden"
+      className="w-full max-w-[1200px] cursor-default h-auto md:h-[586px] flex flex-col md:flex-row justify-between items-center mb-24 mobile:mb-16 overflow-hidden"
       style={{
         backgroundImage: 'url(/gradient.svg)',
         backgroundRepeat: 'no-repeat',
@@ -21,26 +21,30 @@ const GradientBox = () => {
             width={40}
             height={40}
             className="mb-3"
+            draggable={false}
           />
         </div>
 
         {/* Text */}
         <div className="w-full max-w-full md:max-w-[400px]">
           <p className="text-2xl sm:text-3xl md:text-[40px] lg:text-[48px] leading-snug md:leading-[44px] lg:leading-[52px] tracking-tight md:tracking-[-1px]">
-            Wallet Infrastructure <br /> for Stellar dapps
+            Authentication &amp; Wallet Infrastructure <br /> for Stellar dApps
           </p>
           <p className="text-sm sm:text-base md:text-base mt-4 leading-5 md:leading-6">
-            Blux makes it easy to build on Stellar. Effortlessly create wallets,
-            all through a single, developer-friendly API.
+            Blux gives developers everything they need to build on Stellar.
+            Create wallets, authenticate users, sign transactions, and interact
+            with Stellar’s on-chain infrastructure through one simple,
+            developer-friendly API.
           </p>
         </div>
       </div>
 
       {/* Right image */}
-      <div className="w-full md:w-auto mobile:h-26 flex justify-center md:justify-end mt-8 md:mt-0 relative z-10">
+      <div className="w-full select-none md:w-auto mobile:h-26 flex justify-center md:justify-end mt-8 md:mt-0 relative z-10">
         <img
           src="/grid.svg"
           alt="grid"
+          draggable={false}
           className="w-auto h-auto md:mr-0 mobile:hidden "
         />
       </div>

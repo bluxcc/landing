@@ -6,7 +6,6 @@ const footerLinks = [
   {
     title: 'Product',
     links: [
-      { label: 'Docs', href: 'https://docs.blux.cc' },
       { label: 'Demo', href: 'https://demo.blux.cc' },
       { label: 'Dashboard', href: 'https://dashboard.blux.cc' },
     ],
@@ -26,6 +25,13 @@ const footerLinks = [
     ],
   },
   {
+    title: 'Resources',
+    links: [
+      { label: 'Docs', href: 'https://docs.blux.cc' },
+      { label: 'FAQ', href: '/faq' },
+    ],
+  },
+  {
     title: 'Community',
     links: [
       { label: 'X', href: 'https://x.com/bluxofficial' },
@@ -42,12 +48,14 @@ const Footer = () => {
         <div className="max-w-[1280px] short:max-w-[1210px] w-full flex flex-wrap justify-between gap-12">
           <div className="max-w-[250px] md:max-w-[310px] space-y-6">
             <img
+              draggable={false}
               src={bluxLogo}
               alt="Blux logo"
               className="max-h-[41px] md:max-h-[67px] w-auto h-auto object-contain"
             />
-            <p className="text-xs md:text-lg leading-relaxed">
-              Open-source Wallet infrastructure for Stellar applications
+            <p className="text-xs md:text-lg leading-relaxed cursor-default">
+              Open-source authentication and wallet infrastructure for Stellar
+              applications
             </p>
             <div className="flex gap-2.5">
               <a
@@ -57,7 +65,13 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label="Blux on X"
               >
-                <img src={xLogo} alt="X logo" height={24} width={24} />
+                <img
+                  draggable={false}
+                  src={xLogo}
+                  alt="X logo"
+                  height={24}
+                  width={24}
+                />
               </a>
               <a
                 className="size-12 tablet:size-8 mobile:size-10 border border-[#CDCEEE] center hover:bg-[#E5E5E5] transition-colors duration-300"
@@ -67,6 +81,7 @@ const Footer = () => {
                 aria-label="Blux on Discord"
               >
                 <img
+                  draggable={false}
                   src={discordLogo}
                   alt="Discord logo"
                   height={24}
@@ -82,7 +97,7 @@ const Footer = () => {
             >
               {footerLinks.map(({ title, links }) => (
                 <div key={title}>
-                  <p className="!font-bold mb-2">{title}</p>
+                  <p className="!font-bold mb-2 cursor-default">{title}</p>
                   <ul>
                     {links.map(({ label, href }) => (
                       <li
@@ -115,7 +130,7 @@ const Footer = () => {
 
       <div className="max-w-[1280px] tablet:px-10 short:max-w-[1210px] mobile:flex-col mobile:my-4 mobile:items-start mx-auto h-[70px] flex justify-between items-center w-full text-[#4D4D4D] tablet:text-xs text-base mobile:justify-end px-6 md:px-0">
         <p>The Future of Stellar Applications Starts Here.</p>
-        <p>© 2025 Blux</p>
+        <p>© 2026 Blux</p>
       </div>
     </>
   );

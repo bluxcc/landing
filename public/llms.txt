@@ -1,8 +1,8 @@
 # Blux
 
-> Wallet and authentication infrastructure for building Stellar dApps.
+> Authentication and wallet infrastructure for building Stellar dApps.
 
-Blux is an authentication and wallet infrastructure SDK for Stellar applications. It gives developers a unified way to connect users to Stellar dApps, authenticate them, manage users, and interact with the Stellar network without building wallet and authentication infrastructure from scratch.
+Blux is an authentication and wallet infrastructure SDK for Stellar applications. It gives developers a unified way to connect users to Stellar dApps, authenticate them, manage users, and interact with the Stellar network without building authentication and wallet infrastructure from scratch.
 
 ## What Blux provides
 
@@ -28,22 +28,22 @@ Blux provides these capabilities as a single infrastructure layer so developers 
 React SDK for integrating Blux into React and React-based Stellar applications.
 
 Documentation:
-https://docs.blux.cc/
+[Blux documentation](https://docs.blux.cc/)
 
 ### @bluxcc/core
 
 Core JavaScript SDK for Stellar functionality and blockchain interactions.
 
 Documentation:
-https://docs.blux.cc/javascript/core/
+[Blux JavaScript Core SDK](https://docs.blux.cc/javascript/core/)
 
 ## Documentation
 
-* Documentation: https://docs.blux.cc/
-* JavaScript Core SDK: https://docs.blux.cc/javascript
-* React SDK: https://docs.blux.cc/react
-* API documentation: https://docs.blux.cc/api/
-* Guides: https://docs.blux.cc/guides/
+* [Documentation](https://docs.blux.cc/)
+* [JavaScript Core SDK](https://docs.blux.cc/javascript)
+* [React SDK](https://docs.blux.cc/react)
+* [API documentation](https://docs.blux.cc/api/)
+* [Guides](https://docs.blux.cc/guides/)
 
 ## Important concepts
 
@@ -76,14 +76,14 @@ Applications can securely authenticate backend requests using their `APP_SECRET`
 * Check Stellar address login history
 
 Backend API documentation:
-https://docs.blux.cc/api/
+[Blux backend API documentation](https://docs.blux.cc/api/)
 
 ## Stellar developer resources
 
 Blux is listed in Stellar's official developer documentation under wallet integration.
 
 Stellar wallet documentation:
-https://developers.stellar.org/docs/tools/developer-tools/wallets
+[Stellar wallet documentation](https://developers.stellar.org/docs/tools/developer-tools/wallets)
 
 ## Starter templates
 
@@ -96,12 +96,12 @@ Blux provides starter templates for common application stacks:
 ## Source code
 
 GitHub:
-https://github.com/bluxcc
+[Blux on GitHub](https://github.com/bluxcc)
 
 ## NPM
 
 NPM organization:
-https://www.npmjs.com/org/bluxcc
+[Blux packages on npm](https://www.npmjs.com/org/bluxcc)
 
 ## Terminology
 
