@@ -65,14 +65,14 @@ const Hero = () => {
             </p>
             <div className="mt-4 flex gap-2 mobile:flex-col">
               <div className="flex h-14 w-[377px] items-stretch border-b-2 border-b-primary bg-[#F2F2F2] tablet:h-8 tablet:w-[214px] mobile:h-14 mobile:w-full">
-                <div className="relative w-[112px] shrink-0 border-r border-[#CDCEEE] tablet:w-[80px] mobile:w-[112px]">
+                <div className="relative w-[112px] flex justify-center items-center shrink-0 border-r border-[#CDCEEE] tablet:w-[80px] mobile:w-[112px]">
                   <select
                     value={platform}
                     onChange={(event) => {
                       setPlatform(event.target.value as Platform);
                       setCopied(false);
                     }}
-                    className="h-full w-full mt-1 cursor-pointer !border-[#CDCEEE] appearance-none border-0 bg-transparent py-0 pl-3 pr-7 text-sm text-primary outline-none tablet:pl-2 tablet:pr-6 tablet:text-xs mobile:pl-3 mobile:pr-7 mobile:text-sm"
+                    className="h-full w-full  mt-1 cursor-pointer !border-[#CDCEEE] appearance-none border-0 bg-transparent py-0 pl-3 pr-7 text-sm text-primary outline-none tablet:pl-2 tablet:pr-6 tablet:text-xs mobile:pl-3 mobile:pr-7 mobile:text-sm"
                     aria-label="Select your platform"
                   >
                     {Object.keys(installCommands).map((option) => (
