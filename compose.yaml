@@ -4,6 +4,6 @@ services:
   blux-landing:
     build: .
     pull_policy: never
-    restart: on-failure
+    restart: unless-stopped
     ports:
       - "127.0.0.1:3010:3000"
